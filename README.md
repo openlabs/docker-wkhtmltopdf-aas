@@ -11,7 +11,7 @@ Run the container with docker run and binding the ports to the host.
 The web service is exposed on port 80 in the container.
 
 ```
-docker run -d -P openlabs/docket-wkhtmltopdf-aas
+docker run -d -P openlabs/docker-wkhtmltopdf-aas
 ```
 
 The container now runs as a daemon.
