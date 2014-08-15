@@ -10,7 +10,7 @@ This image is based on the
 Run the container with docker run and binding the ports to the host.
 The web service is exposed on port 80 in the container.
 
-```
+```sh
 docker run -d -P openlabs/docker-wkhtmltopdf-aas
 ```
 
@@ -18,7 +18,7 @@ The container now runs as a daemon.
 
 Find the port that the container is bound to:
 
-```
+```sh
 docker port 071599a1373e 80
 ```
 
