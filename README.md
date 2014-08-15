@@ -74,6 +74,7 @@ with open('/path/to/local/file.pdf', 'wb') as f:
 
 ## TODO
 
+* Implement conversion of URLs to PDF
 * Add documentation on passing options to the service
 * Add `curl` example for JSON api
 * Explain more gunicorn options
