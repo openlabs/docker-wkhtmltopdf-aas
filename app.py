@@ -40,7 +40,7 @@ def application(request):
             options = json.loads(request.form.get('options', '{}'))
 
         # Evaluate argument to run with subprocess
-        args = ['/usr/local/bin/wkhtmltopdf.sh']
+        args = ['wkhtmltopdf']
 
         # Add Global Options
         if options:
