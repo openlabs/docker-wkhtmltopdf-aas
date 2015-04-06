@@ -39,6 +39,8 @@ def application(request):
             # Load any options that may have been provided in options
             options = json.loads(request.form.get('options', '{}'))
 
+        source_file.flush()
+
         # Evaluate argument to run with subprocess
         args = ['wkhtmltopdf']
 
