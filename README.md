@@ -72,6 +72,37 @@ with open('/path/to/local/file.pdf', 'wb') as f:
     f.write(response.content)
 ```
 
+Here is another example in python, but this time we pass options to wkhtmltopdf.
+When passing our settings we omit the double dash "--" at the start of the option.
+For documentation on what options are available, visit http://wkhtmltopdf.org/usage/wkhtmltopdf.txt
+
+```python
+import json
+import requests
+
+url = 'http://<docker_host>:<port>/'
+data = {
+    'contents': open('/file/to/convert.html').read().encode('base64'),
+    'options': {
+        #Omitting the "--" at the start of the option
+        'margin-top': '6', 
+        'margin-left': '6', 
+        'margin-right': '6', 
+        'margin-bottom': '6', 
+        'page-width': '105mm', 
+        'page-height': '40mm'
+    }
+}
+headers = {
+    'Content-Type': 'application/json',    # This is important
+}
+response = requests.post(url, data=json.dumps(data), headers=headers)
+
+# Save the response contents to a file
+with open('/path/to/local/file.pdf', 'wb') as f:
+    f.write(response.content)
+```
+
 ## TODO
 
 * Implement conversion of URLs to PDF
